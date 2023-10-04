@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>Ej2</title>
+<meta charset="utf-8">
+<style>
+   #a
+   {
+        border: 2px black solid;
+        width: auto;
+        height: auto;
+   }
+   #b
+   {
+        border: 2px black solid;
+        width: auto;
+        height: auto;
+    }
+   #c
+   {
+        border:2px black solid ;
+        width: auto;
+        height: auto;
+   }
+   #d
+   {
+        width: auto;
+        height: auto;
+        border: 1px black solid;
+   }
+   #e
+   {
+        border: 2px black solid;
+        height: auto;
+        width: auto;
+   }
+   #f
+   {
+        border: 2px black solid;
+        height: auto;
+        width: auto;
+   }
+
+</style>
+</head>
+<body>
+    <script languaje="Javascript">
+        function calcular()
+        {  
+            var motor1,puertas1,pintura1,metal1,clima1;
+            var llantas1,gps1,dvd1;
+            var n=[];
+            var a=0;
+            var suma=12000;
+            var opciones=0;
+            for(i=0;i<document.fc.motor.length;i++)//saber que radio con nombre motor esta marcado
+            {   
+                if(document.fc.motor[i].checked)
+                { 
+                    motor1=document.fc.motor.value; 
+                }
+            }
+            for(i=0;i<document.fc.puertas.length;i++)//saber que radio con nombre puertas esta marcado
+            {
+                if(document.fc.puertas[i].checked)
+                {
+                    puertas1=document.fc.puertas.value; 
+                }
+            }
+            for(i=0;i<document.fc.color.length;i++)//saber que radio con nombre color esta marcado
+            {
+                if(document.fc.color[i].checked)
+                {
+                    pintura1=document.fc.color.value;
+                }
+            }
+            for(i=0;i<document.fc.opc.length;i++)//saber que opciones checkbox estan marcados
+            {
+                if(document.fc.opc[i].checked)
+                {
+                    n[a++] = document.fc.opc[i].value;
+                }
+            } 
+            if(!document.fc.motor[0].checked && document.fc.puertas[0].checked)//Comprobacion de errores mas suma total
+            {
+                alert("error en la seleccion")
+            }
+            else
+            {
+                suma += parseInt(motor1) + parseInt(puertas1)
+                if(!document.fc.puertas[2].checked && document.fc.opc[4].checked)
+                {
+                    alert("ERRor en la selección")
+                }
+                else
+                {
+                    suma += parseInt(pintura1)
+                    if((!document.fc.color[0].checked && !document.fc.color[1].checked && !document.fc.color[2].checked) && document.fc.opc[0].checked)
+                    {
+                            alert("Error en la seleccion")
+                    }
+                    else
+                    {
+                        for(i=0;i<a;i++)
+                        {
+                            opciones +=parseInt(n[i]); 
+                        }
+                        suma += opciones
+                        alert("Total a cobrar: "+ suma)
+                    }
+                }
+            }
+        }
+       
+    </script>
+    <form name="fc">
+    <div id="a">Configuracion del Coche</div>
+    <div id="b">
+        Tipo de Motor<br>
+        <input type="radio" name="motor" value="+0" >Gasolina
+        <input type="radio" name="motor" value="+1500">Diesel(+1500E)
+        <input type="radio" name="motor" value="+3000">Hibrido(+3000E)
+    </div>
+    <div id="c">
+        Tipo puertas<br>
+        <input type="radio" name="puertas" value="-2000">3 Puertas(-2000E)(solo con gasolina)
+        <input type="radio" name="puertas" value="0">5 Puertas
+        <input type="radio" name="puertas" value="+1500">Familiar(+1500E)
+    </div>
+    <div id="d">
+        Tipo de Pintura<br>
+        <input type="radio" name="color" value="0">Rojo
+        <input type="radio" name="color" valu="0">Verde
+        <input type="radio" name="color" value="0">Naranja
+        <input type="radio" name="color" value="-500">Blanco(-500E)
+        <input type="radio" name="color" value="-600">Negro(-600E)
+    </div>
+    <div id="e">
+        Seleccionar las que deseen:<br>
+        <input type="checkbox" name="opc" value="+750">Metalizada(+750E)(Solo Rojo,Verde o Naranja)<br>
+        <input type="checkbox" name="opc" value="+200">Llantas(+200E)<br>
+        <input type="checkbox" name="opc" value="+800">Climatizador(+800E)<br>
+        <input type="checkbox" name="opc" value="+340">GPS(+340E)<br>
+        <input type="checkbox" name="opc" value="+800">DVD(+800E)(solo modelo familiar)
+    </div>
+    <div id="f">
+        Total a Cobrar<br>
+        <button onclick="calcular()">Calcular</button>
+    </div>
+    </form>
+</body>
+</html>

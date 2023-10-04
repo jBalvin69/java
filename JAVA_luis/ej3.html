@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Ejercicio2</title>
+<meta charset="utf-8">
+<style>
+  #p1
+   {
+        border: 1px black solid;
+        width: auto;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+   }
+   #p2
+   {
+        border: 1px black solid;
+        width: auto;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+    }
+   #p3
+   {
+        border:1px black solid ;
+        width: auto;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+   }
+   #p4
+   {
+        border:1px black solid ;
+        width: auto;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+   }
+
+</style>
+</head>
+<body>
+    <script languaje="Javascript">
+        var nota=0;
+        function correccion()
+        {
+            for(i=0;i<document.fc.pregunta1.length;i++)
+            {
+                if(document.fc.pregunta1[i].checked && document.fc.pregunta1[i].value=="correcta")
+                {
+                    nota+=2.5;
+                }
+                
+            }
+            for(i=0;i<document.fc.pregunta2.length;i++)
+            {
+                if(document.fc.pregunta2[i].checked && document.fc.pregunta2[i].value=="correcta")
+                {
+                    nota+=2.5;
+                }
+                
+            }
+            for(i=0;i<document.fc.pregunta3.length;i++)
+            {
+                if(document.fc.pregunta3[i].checked && document.fc.pregunta3[i].value=="correcta")
+                {
+                    nota+=2.5;
+                }
+                
+            }
+            for(i=0;i<document.fc.pregunta4.length;i++)
+            {
+                if(document.fc.pregunta4[i].checked && document.fc.pregunta4[i].value=="correcta")
+                {
+                    nota+=2.5;
+                }
+                
+            }
+            if(nota<5)
+            {
+                alert("Has suspendido con: " +nota)
+            }
+            else
+            {
+                alert("Has aprobado con: " +nota)
+            }
+        }
+       
+    </script>
+    <form name="fc">
+        <div id="p1">
+            Quien tiene más Champions league ganadas:"<br>
+            <input type="radio" name="pregunta1" value="correcta">El bicho<br>
+            <input type="radio" name="pregunta1" value="incorrecta">Lionel Pessi<br>
+            <input type="radio" name="pregunta1" value="incorrecta">Ansu frágil<br>
+        </div>
+        <div id="p2">
+            Donde debutó CR7:<br>
+            <input type="radio" name="pregunta2" value="incorrecta">Real Madrid<br>
+            <input type="radio" name="pregunta2" value="correcta">Sporting Lisboa<br>
+            <input type="radio" name="pregunta2" value="incorrecta">Man.U<br>
+            <input type="radio" name="pregunta2" value="incorrecta">Al Nssr<br>
+        </div>
+        <div id="p3">
+            ¿Cuantos balones de oro tiene CR7?<br>
+            <input type="radio" name="pregunta3" value="incorrecta">3<br>
+            <input type="radio" name="pregunta3" value="correcta">5<br>
+            <input type="radio" name="pregunta3" value="incorrecta">7<br>
+        </div>
+        <div id="p4">
+            ¿Cómo se llama la novia del bicho?<br>
+            <input type="radio" name="pregunta4" value="incorrecta">Marta Pepi<br>
+            <input type="radio" name="pregunta4" value="incorrecta">Cristiana Ronalda<br>
+            <input type="radio" name="pregunta4" value="correcta">Georgina Rodriguez<br>
+            <input type="radio" name="pregunta4" value="incorrecta">Antonella Facuzzo<br>
+            <input type="radio" name="pregunta4" value="incorrecta">Umtiti<br>
+        </div>
+        <input type="button" value="Corregir" onclick="correccion()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Ejercicio1</title>
+<meta charset="utf-8">
+<style>
+    #cuadro
+    {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+    }
+
+</style>
+</head>
+<body>
+    <script languaje="Javascript">
+       function Cambiartexto()
+       {
+        let texto=document.getElementById("frase");
+        let nf=prompt("nueva frase");
+        texto.innerHTML=nf;
+       }
+       function cambiacolor()
+       {
+        var color=document.getElementById("cuadro");
+        var col=prompt("DIme el color en ingles pls:");
+        color.style.backgroundColor=col;
+       }
+       function cambiarletra()
+       {
+        var texto=document.getElementById("frase");
+        var type=prompt("tipo de letra:");
+        var color=prompt("color de letra:");
+        texto.style.color=color;
+        texto.style.fontFamily=type;
+       } 
+    </script>
+    <div id="cuadro"><span id="frase">a</span></div>
+    <button onclick="Cambiartexto()">Cambiar texto</button><br> 
+	<button onclick="cambiacolor()">Cambiar color de fondo</button><br>
+    <button onclick="cambiarletra()">Cambiar tipo y color de letra</button> <br>
+</body>
+</html>
